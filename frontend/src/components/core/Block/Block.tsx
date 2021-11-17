@@ -27,6 +27,7 @@ import {
   ComponentInstance as ComponentInstanceProto,
   DateInput as DateInputProto,
   FileUploader as FileUploaderProto,
+  UppyUploader as UppyUploaderProto,
   MultiSelect as MultiSelectProto,
   NumberInput as NumberInputProto,
   Radio as RadioProto,
@@ -150,6 +151,11 @@ const Slider = React.lazy(() => import("src/components/widgets/Slider/"))
 const FileUploader = React.lazy(() =>
   import("src/components/widgets/FileUploader/")
 )
+
+const UppyUploader = React.lazy(() =>
+  import("src/components/widgets/UppyUploader/")
+)
+
 const TextArea = React.lazy(() => import("src/components/widgets/TextArea/"))
 const TextInput = React.lazy(() => import("src/components/widgets/TextInput/"))
 const TimeInput = React.lazy(() => import("src/components/widgets/TimeInput/"))
@@ -610,6 +616,22 @@ class Block extends PureComponent<Props> {
           <FileUploader
             key={fileUploaderProto.id}
             element={fileUploaderProto}
+            width={width}
+            widgetMgr={widgetProps.widgetMgr}
+            uploadClient={this.props.uploadClient}
+            disabled={widgetProps.disabled}
+          />
+        )
+      }
+
+      case "uppyUploader": {
+        const uppyUploaderProto = node.element
+          .uppyUploader as UppyUploaderProto
+
+        return (
+          <UppyUploader
+            key={uppyUploaderProto.id}
+            element={uppyUploaderProto}
             width={width}
             widgetMgr={widgetProps.widgetMgr}
             uploadClient={this.props.uploadClient}

@@ -56,6 +56,7 @@ from streamlit.elements.empty import EmptyMixin
 from streamlit.elements.number_input import NumberInputMixin
 from streamlit.elements.color_picker import ColorPickerMixin
 from streamlit.elements.file_uploader import FileUploaderMixin
+from streamlit.elements.uppy_uploader import UppyUploaderMixin
 from streamlit.elements.select_slider import SelectSliderMixin
 from streamlit.elements.slider import SliderMixin
 from streamlit.elements.image import ImageMixin
@@ -102,6 +103,7 @@ class DeltaGenerator(
     EmptyMixin,
     ExceptionMixin,
     FileUploaderMixin,
+    UppyUploaderMixin,
     FormMixin,
     GraphvizMixin,
     HelpMixin,

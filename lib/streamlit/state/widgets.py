@@ -31,6 +31,7 @@ from streamlit.proto.Components_pb2 import ComponentInstance
 from streamlit.proto.DateInput_pb2 import DateInput
 from streamlit.proto.DownloadButton_pb2 import DownloadButton
 from streamlit.proto.FileUploader_pb2 import FileUploader
+from streamlit.proto.UppyUploader_pb2 import UppyUploader
 from streamlit.proto.MultiSelect_pb2 import MultiSelect
 from streamlit.proto.NumberInput_pb2 import NumberInput
 from streamlit.proto.Radio_pb2 import Radio
@@ -59,6 +60,7 @@ WidgetProto = Union[
     DateInput,
     DownloadButton,
     FileUploader,
+    UppyUploader,
     MultiSelect,
     NumberInput,
     Radio,
@@ -188,6 +190,7 @@ element_type_to_value_type = {
     "color_picker": "string_value",
     "date_input": "string_array_value",
     "file_uploader": "file_uploader_state_value",
+    "uppy_uploader": "file_uploader_state_value",
     "multiselect": "int_array_value",
     "number_input": "double_value",
     "radio": "int_value",
